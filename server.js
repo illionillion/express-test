@@ -23,6 +23,16 @@ app.get('/about', function(req, res) {
     res.render('pages/about', {"name": "about"});
 });
 
+app.get('/form', function(req, res) {
+    res.render('pages/form', {"title": "お問合せフォーム","output":""});
+});
+app.post('/form', function(req, res) {
+    // console.log(req.body.username)
+    console.log(req)
+    console.log(req.body)
+    res.render('pages/form', {"title": "お問合せフォーム","output":""});
+});
+
 app.listen(port);
 
 console.log(`http://${ipAddress}:${port}`);
