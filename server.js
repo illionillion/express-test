@@ -1,6 +1,12 @@
 import Express from "express";
+import { networkInterfaces } from 'os';
+
+const nets = networkInterfaces();
+const net = nets["en0"]?.find((v) => v.family == "IPv4");
+const ipAddress = net.address
 
 const app = Express()
+const port = 8080
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
@@ -17,5 +23,8 @@ app.get('/about', function(req, res) {
     res.render('pages/about', {"name": "about"});
 });
 
-app.listen(8080);
-console.log('8080 is the magic port');
+app.listen(port);
+
+console.log(`http://${ipAddress}:${port}`);
+console.log(`http://localhost:${port}`);
+// console.log('8080 is the magic port');
