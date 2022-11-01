@@ -9,7 +9,9 @@
 <body>
     about me <br>
     <a href="./">to top</a>
-    <%= name %>
-
+    <!-- <%= name %> -->
+    <% for (var item of name) { %>
+        <p><%= item %></p>
+    <% } %>
 </body>
 </html>

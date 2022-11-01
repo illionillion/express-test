@@ -25,7 +25,7 @@ app.use('/form', formRouter)
 
 // index page
 app.get('/', function(req, res) {
-    res.render('pages/index', {"name": "index"});
+    res.render('pages/index', {"name": "index Page"});
 });
 
 app.listen(port);
